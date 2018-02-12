@@ -19,7 +19,9 @@ Features include:
    - npm install
    OR 
    - yarn
-3. Run in develop mode. 
+3. Add the development configuaration file (./config/config.dev.js, see the example file). This file is ignored for security and should be added manually each time a new project is rebulid. 
+4. Run in develop mode. 
    - npm run dev 
-4. Build the project
+5. Build the project
    - npm run build 
+6. Deployment (Heroku example, will add later)
