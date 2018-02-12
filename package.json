@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "webpack --watch",
     "dev": "npm run watch | nodemon",
-    "build": "webpack"
+    "build": "webpack",
+    "start":"webpack -p && node ./dist/server.js"
   },
   "repository": {
     "type": "git",
