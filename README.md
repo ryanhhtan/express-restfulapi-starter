@@ -10,18 +10,21 @@ Features include:
 
 ## Usage
 ### Prerequisite
-1. One of a Node Package Manage tools is installed, e.g: yarn, npm. 
-2. Install nodemon globally
+- One of a Node Package Manage tools is installed, e.g: yarn, npm. 
+- Install nodemon globally
     npm install -g nodemon
 ### Steps
-1. Clone the project
-2. Build the project
+#### Clone the project
+#### Build the project
    - npm install
    OR 
    - yarn
-3. Add the development configuaration file (./config/config.dev.js, see the example file). This file is ignored for security and should be added manually each time a new project is rebulid. 
-4. Run in develop mode. 
+#### Set up MongoDB
+The example uses mlab(https://mlab.com/) as the db server., 
+#### Add the development configuaration file 
+Add the file ./config/config.dev.js to the project(see the example file). This file is ignored for security and should be added manually each time a new project is rebulid. 
+#### Run in develop mode. 
    - npm run dev 
-5. Build the project
+#### Build the project
    - npm run build 
-6. Deployment (Heroku example, will add later)
+#### Deployment (Heroku example, will add later)
