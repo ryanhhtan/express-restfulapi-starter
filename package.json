@@ -1,0 +1,44 @@
+{
+  "name": "express-restfulapi-starter",
+  "version": "1.0.0",
+  "description": "Starter for restful api with express",
+  "main": "./dist/server.js",
+  "scripts": {
+    "watch": "webpack --watch",
+    "dev": "npm run watch | nodemon",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanhhtan/express-restfulapi-starter.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "webpack",
+    "babel",
+    "restful",
+    "api",
+    "starter"
+  ],
+  "author": "Hai Hua (Ryan)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanhhtan/express-restfulapi-starter/issues"
+  },
+  "homepage": "https://github.com/ryanhhtan/express-restfulapi-starter#readme",
+  "dependencies": {
+    "async": "^2.6.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.18",
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0"
+  }
+}
