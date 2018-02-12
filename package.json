@@ -32,14 +32,12 @@
     "async": "^2.6.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongoose": "^5.0.4"
-  },
-  "devDependencies": {
+    "mongoose": "^5.0.4",
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "clean-webpack-plugin": "^0.1.18",
-    "webpack": "^3.10.0",
-    "webpack-node-externals": "^1.6.0"
+    "clean-webpack-plugin": "^0.1.18"
   }
 }
