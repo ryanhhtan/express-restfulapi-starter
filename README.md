@@ -16,9 +16,10 @@ Features include:
 ### Steps
 1. Clone the project
 2. Build the project
-   npm install OR 
-   yarn
+   - npm install
+   OR 
+   - yarn
 3. Run in develop mode. 
-   npm run dev 
+   - npm run dev 
 4. Build the project
-   npm run build 
+   - npm run build 
