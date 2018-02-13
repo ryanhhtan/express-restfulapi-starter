@@ -21,10 +21,16 @@ Features include:
    - yarn
 #### Set up MongoDB
 The example uses mlab(https://mlab.com/) as the db server., 
-#### Add the development configuaration file 
-Add the file ./config/config.dev.js to the project(see the example file). This file is ignored for security and should be added manually each time a new project is rebulid. 
+#### Add the development configuration file 
+Add the file ./config/config.dev.js to the project (See the example file). This file is ignored for security reason and should be added manually each time a new project is rebulid. 
 #### Run in develop mode. 
    - npm run dev 
 #### Build the project
    - npm run build 
-#### Deployment (Heroku example, will add later)
+#### Deployment (Heroku) 
+This example uses Heroku as the deployment environment. To deployment steps:
+    - Install Heroku CLI 
+    - Login with Heroku CLI: heroku login
+    - Create an app: Heroku apps:create [app name]
+    - Push the repo to heroku: git push heroku 
+        A better solution is to hook the app with a github branch so that Heroku will automatically deploy the newly committed app. 
