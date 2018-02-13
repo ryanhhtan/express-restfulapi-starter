@@ -10,7 +10,7 @@ apiRouter.get('/posts', ApiPostController.getAllPosts);
 /* CRUD-R post */
 apiRouter.get('/post/:id', ApiPostController.getPost);
 /* CRUD-U post */
-apiRouter.put('/post', ApiPostController.updatePost);
+apiRouter.put('/post/:id', ApiPostController.updatePost);
 /* CRUD-D post */
 apiRouter.delete('/post/:id', ApiPostController.deletePost);
 

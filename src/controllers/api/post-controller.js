@@ -37,11 +37,10 @@ exports.getPost = (req, res, next) => {
 /* Update a post */
 exports.updatePost = (req, res, next) => {
   let update = Object.assign({}, req.body);
-  delete update['id'];
 
   // SHOULD DO VALIDATION BEFORE SAVING DATA TO DATABASE
 
-  Post.findByIdAndUpdate(req.body.id, update).exec().then(oldPost => {
+  Post.findByIdAndUpdate(req.params.id, update).exec().then(oldPost => {
     return res.json(oldPost);
   }).catch(err => {
     return next(err);

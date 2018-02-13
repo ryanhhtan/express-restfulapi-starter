@@ -1,0 +1,13 @@
+# express-restful-api-starter
+## v1.0
+### updated at
+2018-02-12
+### added features
+- babel support
+- webpack
+- express
+- mongodb/mongoose
+- development / deployment environment setup
+
+
+

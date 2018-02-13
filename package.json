@@ -6,7 +6,9 @@
   "scripts": {
     "watch": "webpack --watch",
     "dev": "npm run watch | nodemon",
-    "build": "webpack"
+    "build": "webpack -p",
+    "heroku-prebuild":"npm install --only=dev",
+    "start":"npm run build && node ./dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -34,11 +36,12 @@
     "mongoose": "^5.0.4"
   },
   "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "clean-webpack-plugin": "^0.1.18",
-    "webpack": "^3.10.0",
-    "webpack-node-externals": "^1.6.0"
+    "clean-webpack-plugin": "^0.1.18"
   }
+
 }
