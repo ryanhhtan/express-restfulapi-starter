@@ -31,22 +31,26 @@ The example uses [mlab](https://mlab.com/) as the database server.
 #### Add the development configuration file 
 Add the file ./config/config.dev.js to the project (See the example file). This file is ignored for security reason and should be added manually each time a new project is rebulid. 
 #### Run in develop mode. 
-   - npm run dev 
+```
+npm run dev 
+```
 #### Build the project
-   - npm run build 
+```
+npm run build 
+```
 #### Deployment (Heroku) 
 This example uses Heroku as the deployment environment. To deployment steps:
-    - Install Heroku CLI 
-    - Login with Heroku CLI: 
-    ```
-    heroku login
-    ```
-    - Create an app:
-    ```
-    heroku apps:create [app name]
-    ```
-    - Push the repo to heroku: 
-    ```
-    git push heroku
-    ``` 
-    A better solution is to hook the app deployment in Heroku with a github branch so that Heroku will automatically deploy the newly committed app. 
+- Install Heroku CLI 
+- Login with Heroku CLI: 
+```
+heroku login
+```
+- Create an app:
+```
+heroku apps:create [app name]
+```
+- Push the repo to heroku: 
+```
+git push heroku
+``` 
+A better solution is to hook the app deployment in Heroku with a github branch so that Heroku will automatically deploy the newly committed app. 
