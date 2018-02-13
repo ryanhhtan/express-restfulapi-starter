@@ -30,7 +30,7 @@ yarn
 The example uses [mlab](https://mlab.com/) as the database server.
 #### Add the development configuration file 
 Add the file ./config/config.dev.js to the project (See the example file). This file is ignored for security reason and should be added manually each time a new project is rebulid. 
-#### Run in develop mode. 
+#### Run in develop mode.
 ```
 npm run dev 
 ```
