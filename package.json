@@ -5,10 +5,10 @@
   "main": "./dist/server.js",
   "scripts": {
     "watch": "webpack --watch",
-    "dev": "npm run watch | nodemon",
+    "dev": "webpack --watch | nodemon",
     "build": "webpack -p",
-    "heroku-prebuild":"npm install --only=dev",
-    "start":"npm run build && node ./dist/server.js"
+    "heroku-prebuild": "npm install --only=dev",
+    "start": "npm run build && node ./dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -31,17 +31,21 @@
   "homepage": "https://github.com/ryanhhtan/express-restfulapi-starter#readme",
   "dependencies": {
     "async": "^2.6.0",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongoose": "^5.0.4"
+    "express-validator": "^5.0.0",
+    "jsonwebtoken": "^8.1.1",
+    "mongoose": "^5.0.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1"
   },
   "devDependencies": {
-    "webpack": "^3.10.0",
-    "webpack-node-externals": "^1.6.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "clean-webpack-plugin": "^0.1.18"
+    "clean-webpack-plugin": "^0.1.18",
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0"
   }
-
 }

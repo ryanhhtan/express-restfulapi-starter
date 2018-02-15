@@ -4,6 +4,7 @@
 This a starter for creating RESTful API backend application with an example of basic CRUD for the resource of posting.
 Features include:
 - Basic setup with Nodejs, Express, MongoDB/Mongoose.
+- Basic authentication with passport/passport-jwt
 - ES6 support with Babel.
 - Webpack bundle
 - Development support, e.g: Nodemon, source-map, prod/dev configuration separation, etc. 

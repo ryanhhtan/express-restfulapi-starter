@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
+import User from './user';
 
-const PostSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const PostSchema = new Schema({
   title: {
     type: String,
     required: true
@@ -14,7 +17,10 @@ const PostSchema = new mongoose.Schema({
   },
   update_at: {
     type: Date, 
-    default: Date.now 
+  },
+  author: {
+    type: Schema.Types.ObjectId, 
+    ref: 'User'
   }
 });
 
