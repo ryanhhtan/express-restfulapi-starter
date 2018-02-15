@@ -9,5 +9,12 @@
 - mongodb/mongoose
 - development / deployment environment setup
 
-
+## v1.1
+### updated at
+2018-02-15
+### added features
+- authentication: 
+	user register
+	user login
+- protected routes with authentication guard 
 
