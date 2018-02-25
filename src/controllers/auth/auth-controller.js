@@ -32,7 +32,7 @@ exports.checkUserRules = [
 let jwtOptions = {}; 
 jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 jwtOptions.secretOrKey = "secret";
-jwtOptions.jsonWebTokenOptions = {maxAge: "2h"};
+jwtOptions.jsonWebTokenOptions = {maxAge: "2h"}; // expires in 2h in server side.
 
 // Use JWT strategy.
 passport.use('jwt', new Strategy(jwtOptions, (jwt_payload, done) =>{
@@ -90,7 +90,7 @@ exports.login = (req, res, next) => {
   }).then(pass => {
     let payload = {id: userFound._id};
     let token = jwt.sign(payload, jwtOptions.secretOrKey);
-    return res.json({message: "OK", token: token});
+    return res.json({success: "true", token: token, expiresIn: Date.now() + 60 * 60 * 2});
   }).catch(err => {
     console.log(err);
     return res.status(401).json("Invalid username or password");
