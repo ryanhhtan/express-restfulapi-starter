@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
 });
 
 UserSchema.virtual('full_name').get(function() { // Can not use arrow function here
-  if (this.name.first !=="" || this.name.last != "") {
+  if (this.name.first !=="" || this.name.last !== "") {
     return this.name.first + ' ' + this.name.last;
   }
   return "anonymous";

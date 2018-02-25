@@ -84,7 +84,7 @@ exports.register = (req, res, next) => {
 /* Handle user login */
 exports.login = (req, res, next) => {
   let userFound = {};
-  User.findOne({email: req.body.email, activated: true}).select('password').exec().then(user => {
+  User.findOne({email: req.body.email, activated: true}).select('name email password').exec().then(user => {
     userFound = user;
     return bcrypt.compare(req.body.password, user.password);
   }).then(pass => {
@@ -93,16 +93,22 @@ exports.login = (req, res, next) => {
       let token = jwt.sign(payload, jwtOptions.secretOrKey);
       return res.json({
         success: "true", 
-        token: token, expiresIn: Date.now() + 60 * 60 * 2
+        user: {
+          id: userFound._id,
+          name: userFound.full_name,
+          email: userFound.email
+        },
+        token: token, 
+        expiresIn: Date.now() + 60 * 60 * 2
       });
     }
     return res.json({
       success: "false", 
-      error: "Invalid user name or password"
+      error: "Invalid username or password"
     });
   }).catch(err => {
     console.log(err);
-    return res.status(401).json("Invalid username or password");
+    return res.status(401).json("Authentication failed.");
   });
 };
 
