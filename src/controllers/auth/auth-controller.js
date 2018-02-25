@@ -88,9 +88,18 @@ exports.login = (req, res, next) => {
     userFound = user;
     return bcrypt.compare(req.body.password, user.password);
   }).then(pass => {
-    let payload = {id: userFound._id};
-    let token = jwt.sign(payload, jwtOptions.secretOrKey);
-    return res.json({success: "true", token: token, expiresIn: Date.now() + 60 * 60 * 2});
+    if (pass) {
+      let payload = {id: userFound._id};
+      let token = jwt.sign(payload, jwtOptions.secretOrKey);
+      return res.json({
+        success: "true", 
+        token: token, expiresIn: Date.now() + 60 * 60 * 2
+      });
+    }
+    return res.json({
+      success: "false", 
+      error: "Invalid user name or password"
+    });
   }).catch(err => {
     console.log(err);
     return res.status(401).json("Invalid username or password");
