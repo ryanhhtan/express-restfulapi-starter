@@ -12,10 +12,10 @@ const PostSchema = new Schema({
     type: String,
     required: true
   },
-  create_at: {
+  created_at: {
     type: Date, 
   },
-  update_at: {
+  updated_at: {
     type: Date, 
   },
   author: {
