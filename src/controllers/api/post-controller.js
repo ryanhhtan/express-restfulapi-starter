@@ -6,8 +6,8 @@ exports.addPost = (req, res, next) => {
   const newPost = new Post({
     title: req.body.title,
     body: req.body.body,
-    create_at: Date.now(),
-    update_at: Date.now(),
+    created_at: Date.now(),
+    updated_at: Date.now(),
     author: req.user._id
   });
   
@@ -42,7 +42,7 @@ exports.getPost = (req, res, next) => {
 /* Update a post */
 exports.updatePost = (req, res, next) => {
   let update = Object.assign({}, req.body);
-  update.update_at = Date.now();
+  update.updated_at = Date.now();
 
   // SHOULD DO VALIDATION BEFORE SAVING DATA TO DATABASE
 
