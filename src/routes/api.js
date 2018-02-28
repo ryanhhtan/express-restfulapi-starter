@@ -3,6 +3,11 @@ import ApiPostController from '../controllers/api/post-controller';
 import {authGuard} from '../controllers/auth/auth-controller';
 
 const apiRouter = express.Router();
+apiRouter.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Request-With, Content-Type, Accept');
+  next();
+});
 
 /* CRUD-C post */
 //apiRouter.post('/posts', passport.authenticate('jwt', {session: false }), ApiPostController.addPost);
