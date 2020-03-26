@@ -4,25 +4,18 @@
   "description": "Starter for restful api with express",
   "main": "./dist/server.js",
   "scripts": {
-    "watch": "webpack --watch",
-    "dev": "webpack --watch | nodemon",
-    "build": "webpack -p",
-    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=development; npm install --only=dev",
-    "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
-    "start": "npm run build && node ./dist/server.js"
+    "build": "rimraf dist && babel src --out-dir dist",
+    "dev": "nodemon -w src --exec babel-node src/server.js",
+    "serve": "build && node dist/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryanhhtan/express-restfulapi-starter.git"
+    "url": "https://github.com/ryanhhtan/express-restfulapi-starter.git"
   },
   "keywords": [
     "nodejs",
     "express",
-    "webpack",
-    "babel",
-    "restful",
-    "api",
-    "starter"
+    "babel"
   ],
   "author": "Hai Hua (Ryan)",
   "license": "ISC",
@@ -31,22 +24,21 @@
   },
   "homepage": "https://github.com/ryanhhtan/express-restfulapi-starter#readme",
   "dependencies": {
-    "async": "^2.6.0",
-    "bcrypt": "^1.0.3",
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "express-validator": "^5.0.0",
-    "jsonwebtoken": "^8.1.1",
-    "mongoose": "^5.0.4",
-    "passport": "^0.4.0",
-    "passport-jwt": "^3.0.1"
+    "bcrypt": "^4.0.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.6",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "clean-webpack-plugin": "^0.1.18",
-    "webpack": "^3.10.0",
-    "webpack-node-externals": "^1.6.0"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "babel-node": "^0.0.1-security",
+    "nodemon": "^2.0.2",
+    "rimraf": "^3.0.2"
   }
 }

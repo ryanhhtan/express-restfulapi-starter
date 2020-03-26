@@ -13,15 +13,15 @@ const server = express();
 /* Set service port according to configure */
 const port = config.port;
 
-/* Middleware */ 
+/* Middleware */
 server.use(bodyParser.json());
 
 /* Get db connection credentials either from environment variables or from a file */
-const dbuser = config.dbCredentials.dbuser; 
+const dbuser = config.dbCredentials.dbuser;
 const dbpassword = config.dbCredentials.dbpassword;
 
 /* Set up default mongoose connection */
-mongoose.connect('mongodb://' + dbuser + ':' + dbpassword + '@ds231568.mlab.com:31568/ryanhhtan-posting');
+mongoose.connect(`mongodb+srv://${dbuser}:${dbpassword}@cluster0-dlpyf.mongodb.net/test?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
 // Get mongoose to use the global promise library.
 mongoose.Promise = global.Promise;
 // Get the default connection
@@ -31,7 +31,7 @@ db.on('error', console.error.bind(console, 'connection error.'));
 
 
 /* Root route */
-server.get('/', (req, res) => {
+server.get('/', (_, res) => {
   res.send('Sever is running.<br> Use /api enpoint to access data.');
 });
 

@@ -1,8 +1,8 @@
 import User from '../../models/user';
 import bcrypt from 'bcrypt';
 
-import { check, validationResult } from 'express-validator/check';
-import { matchedData, sanitize } from 'express-validator/filter';
+import { check, validationResult } from 'express-validator';
+import { matchedData } from 'express-validator';
 
 import {Strategy, ExtractJwt } from 'passport-jwt';
 import jwt from 'jsonwebtoken';
